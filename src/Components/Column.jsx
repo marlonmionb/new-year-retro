@@ -5,15 +5,14 @@ import NewCard from './NewCard'
 import Card from './Card';
 
 const Column = (props) => {
-    const [isAddCardButtonVisible, setAddCardButtonVisible] = useState(true);
     const [cards, setCards] = useState([])
 
     function toggleAddCardButton() {
-        setAddCardButtonVisible(!isAddCardButtonVisible)
+        props.sendDataToApp(props.id)
     }
 
     function toggleAddCard(data) {
-        setAddCardButtonVisible(data)
+        props.sendDataToApp(data)
     }
 
     function receiveNewCardData(newCard) {
@@ -29,11 +28,12 @@ const Column = (props) => {
     return (
         <div className={classes.container}>
             <p className={classes.red}>{props.title}</p>
-            { isAddCardButtonVisible ? 
+            { props.isAddCardButtonVisible ? 
                 <button onClick={toggleAddCardButton}>+</button> : 
-                <NewCard sendDataToColumn={toggleAddCard} 
-                toggleAddButton={isAddCardButtonVisible}
-                sendNewCardData={receiveNewCardData}
+                <NewCard 
+                    sendDataToColumn={toggleAddCard} 
+                    toggleAddButton={props.isAddCardButtonVisible}
+                    sendNewCardData={receiveNewCardData}
                 />
             }
             {
