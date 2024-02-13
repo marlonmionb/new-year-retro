@@ -25,6 +25,18 @@ const Column = (props) => {
         setCards(newCards)
     }
 
+    function receiveNewData(editedCard) {
+        console.log('Edited Card:', editedCard)
+        const newCards = cards.map(card => {
+            if (card.id === editedCard.id) {
+                return {...card, titleName: editedCard.titleName, description: editedCard.description}
+            }
+            return card
+        })
+        console.log('Edited new cards:', newCards)
+        setCards(newCards)
+    }
+
     return (
         <div className={classes.container}>
             <p className={classes.red}>{props.title}</p>
@@ -44,6 +56,7 @@ const Column = (props) => {
                             description={card.description}
                             id={card.id}
                             sendDeletion={receiveCardDeletion}
+                            sendEditedCardData={receiveNewData}
                             key={card.id}                      
                             />
                     )
