@@ -1,6 +1,7 @@
 import Column from "./Components/Column"
 import classes from "./App.module.css"
 import { useState } from 'react';
+import './index.css'
 
 const initialColumns = [
   {
@@ -42,19 +43,23 @@ function App() {
   }
 
   return (
-    <div className={classes.row}>
-      {columns.map(column => {
-        return (
-          <Column 
-            key={column.id} 
-            id={column.id}
-            title={column.title}
-            sendDataToApp={receiveDataFromColumn}
-            isAddCardButtonVisible={column.isAddCardButtonVisible}
-            />
-        )
-      })}
-    </div>
+    <>
+    <h1 className="text-3xl font-bold">New Year Retro</h1>
+      <div className={classes.container}>
+        {columns.map(column => {
+          return (
+            <Column 
+              key={column.id} 
+              id={column.id}
+              title={column.title}
+              sendDataToApp={receiveDataFromColumn}
+              isAddCardButtonVisible={column.isAddCardButtonVisible}
+              />
+          )
+        })}
+      </div>
+
+    </>
   )
 }
 
