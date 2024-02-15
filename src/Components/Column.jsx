@@ -16,7 +16,7 @@ const Column = (props) => {
     }
 
     function receiveNewCardData(newCard) {
-        const updatedCards = [...cards, newCard]
+        const updatedCards = [newCard, ...cards]
         setCards(updatedCards)
     }
 

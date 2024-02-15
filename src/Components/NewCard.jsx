@@ -40,9 +40,9 @@ const NewCard = (props) => {
             <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Adicione um título" value={titleName} onChange={handleTitleNameChange} />
                     <input type="text" placeholder="Adicione uma descrição" value={description} onChange={handleDescriptionChange} />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Adicionar" />
             </form> 
-            <button onClick={toggleCloseNewCardButton}>Close</button>
+            <button onClick={toggleCloseNewCardButton}>Cancelar</button>
         </div>
     )
 }
