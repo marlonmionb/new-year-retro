@@ -1,7 +1,7 @@
 import Column from "./Components/Column"
 import classes from "./App.module.css"
 import { useState } from 'react';
-import './index.css'
+// import './index.css'
 
 const initialColumns = [
   {
