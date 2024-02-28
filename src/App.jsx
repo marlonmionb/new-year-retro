@@ -1,7 +1,7 @@
 import Column from "./Components/Column"
-import classes from "./App.module.css"
+import "./App.scss"
 import { useState } from 'react';
-// import './index.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const initialColumns = [
   {
@@ -43,9 +43,9 @@ function App() {
   }
 
   return (
-    <>
-    <h1 className="text-3xl font-bold">New Year Retro</h1>
-      <div className={classes.container}>
+    <div>
+    <h1 className="d-flex justify-content-center">New Year Retro</h1>
+      <div className="d-flex justify-content-center app__container">
         {columns.map(column => {
           return (
             <Column 
@@ -59,7 +59,7 @@ function App() {
         })}
       </div>
 
-    </>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
-import classes from './Card.module.css'
+import './NewCard.scss'
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const NewCard = (props) => {
     const [titleName, setTitleName] = useState('');
@@ -36,13 +37,31 @@ const NewCard = (props) => {
       }
 
     return (
-        <div className={classes.container}>
+        <div className='new-card__container d-flex flex-column justify-content-center'>
             <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Adicione um título" value={titleName} onChange={handleTitleNameChange} />
-                    <input type="text" placeholder="Adicione uma descrição" value={description} onChange={handleDescriptionChange} />
-                <input type="submit" value="Adicionar" />
+                <div className='d-flex flex-column align-items-center'>
+                    <div className='new-card__title-input-container d-flex mb-2 w-100'>
+                        <input 
+                            className='new-card__title-input d-flex mt-2 mb-2 ' 
+                            type="text" 
+                            placeholder="Adicione um título..." 
+                            value={titleName} 
+                            onChange={handleTitleNameChange} />
+                    </div>
+                    <div className='d-flex mb-2 new-card__width-90'>
+                        <input 
+                            className='new-card__description-input'
+                            type="text" 
+                            placeholder="Adicione uma descrição..." 
+                            value={description} 
+                            onChange={handleDescriptionChange} />
+                    </div>
+                </div>
+                <div className='d-flex justify-content-end'>
+                    <input className='mb-2 mx-2' type="submit" value="Adicionar" />
+                    <input className='mb-2 ms-2 me-3' type="button" value="Cancelar" onClick={toggleCloseNewCardButton} />
+                </div>
             </form> 
-            <button onClick={toggleCloseNewCardButton}>Cancelar</button>
         </div>
     )
 }

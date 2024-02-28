@@ -1,0 +1,11 @@
+.column {
+    &__container {
+        width: 20%;
+        height: 800px;
+        background-color: rgb(201, 220, 237);
+        border:1px solid black;
+    }
+    &__new-card-container {
+        width: 90%;
+    }
+}

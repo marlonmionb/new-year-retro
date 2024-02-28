@@ -1,5 +1,5 @@
-import classes from './Card.module.css'
 import { useState } from 'react';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 
 const Card = (props) => {
     const [inEditingMode, setEditingMode] = useState(false)
@@ -38,7 +38,7 @@ const Card = (props) => {
     }
     
     return (
-        <div className={classes.container}>
+        <div className='button__primary'>
             { inEditingMode ?
                 <form onSubmit={handleOnSubmit}>
                     <input type='text' value={titleName} onChange={handleTitleNameChange}/>

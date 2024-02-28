@@ -1,0 +1,27 @@
+.new-card {
+    &__container {
+        width: 100%;
+        height: 170px;
+        background-color: rgb(162, 162, 212);
+        border-radius: 5px;
+    }
+    &__title-input {
+        width: 100%;
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    &__description-input {
+        width: 100%;
+        height: 70px;
+        border: solid 1px rgb(255, 255, 255);
+        border-radius: 5px;
+    }
+    &__width-90 {
+        width: 90%;
+    }
+    &__title-input-container {
+        background-color: rgb(178, 178, 202);
+    }
+
+}
+    

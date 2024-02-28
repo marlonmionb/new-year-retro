@@ -1,6 +1,5 @@
 import { useState } from 'react';
-
-import classes from './Column.module.css'
+import './Column.scss'
 import NewCard from './NewCard'
 import Card from './Card';
 
@@ -38,15 +37,21 @@ const Column = (props) => {
     }
 
     return (
-        <div className={classes.container}>
-            <p className={classes.red}>{props.title}</p>
+        <div className='column__container d-flex flex-column align-items-center'>
+            <div>
+                <p className='d-flex justify-content-center p-3'>{props.title}</p>
+            </div>
             { props.isAddCardButtonVisible ? 
-                <button onClick={toggleAddCardButton}>+</button> : 
+            <div className='d-flex justify-content-center'>
+                <button onClick={toggleAddCardButton}>+</button> 
+            </div> :
+            <div className='column__new-card-container'>
                 <NewCard 
                     sendDataToColumn={toggleAddCard} 
                     toggleAddButton={props.isAddCardButtonVisible}
                     sendNewCardData={receiveNewCardData}
                 />
+            </div>
             }
             {
                 cards.map(card => {
