@@ -40,7 +40,7 @@ const NewCard = (props) => {
         <div className='new-card__container d-flex flex-column justify-content-center'>
             <form onSubmit={handleSubmit}>
                 <div className='d-flex flex-column align-items-center'>
-                    <div className='new-card__title-input-container d-flex mb-2 w-100'>
+                    <div className='new-card__title-input-container w-100 d-flex flex-column align-items-center mb-2'>
                         <input 
                             className='new-card__title-input d-flex mt-2 mb-2 ' 
                             type="text" 
@@ -49,12 +49,17 @@ const NewCard = (props) => {
                             onChange={handleTitleNameChange} />
                     </div>
                     <div className='d-flex mb-2 new-card__width-90'>
-                        <input 
+                        {/* <input 
                             className='new-card__description-input'
                             type="text" 
                             placeholder="Adicione uma descrição..." 
                             value={description} 
-                            onChange={handleDescriptionChange} />
+                            onChange={handleDescriptionChange} /> */}
+                        <textarea 
+                            className='new-card__description-input'
+                            onChange={handleDescriptionChange}
+                            placeholder="Adicione uma descrição..." 
+                            >{description}</textarea>
                     </div>
                 </div>
                 <div className='d-flex justify-content-end'>
