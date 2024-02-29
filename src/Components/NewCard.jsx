@@ -49,12 +49,6 @@ const NewCard = (props) => {
                             onChange={handleTitleNameChange} />
                     </div>
                     <div className='d-flex mb-2 new-card__width-90'>
-                        {/* <input 
-                            className='new-card__description-input'
-                            type="text" 
-                            placeholder="Adicione uma descrição..." 
-                            value={description} 
-                            onChange={handleDescriptionChange} /> */}
                         <textarea 
                             className='new-card__description-input'
                             onChange={handleDescriptionChange}
