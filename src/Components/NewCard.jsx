@@ -55,12 +55,13 @@ const NewCard = (props) => {
                             onChange={handleDescriptionChange}
                             placeholder="Adicione uma descrição..."
                             required 
-                            >{description}</textarea>
+                            value={description}
+                            ></textarea>
                     </div>
                 </div>
                 <div className='d-flex justify-content-end'>
-                    <input className='mb-2 mx-2' type="submit" value="Adicionar" />
-                    <input className='mb-2 ms-2 me-3' type="button" value="Cancelar" onClick={toggleCloseNewCardButton} />
+                    <input className='mb-2 mx-2 new-card__primary-button' type="submit" value="Adicionar" />
+                    <input className='mb-2 ms-2 me-3 new-card__primary-button' type="button" value="Cancelar" onClick={toggleCloseNewCardButton} />
                 </div>
             </form> 
         </div>

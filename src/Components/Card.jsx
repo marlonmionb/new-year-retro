@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css'
 import './Card.scss'
+import './NewCard.scss'
 
 const Card = (props) => {
     const [inEditingMode, setEditingMode] = useState(false)
@@ -42,24 +43,42 @@ const Card = (props) => {
         <div className='card__container d-flex flex-column justify-content-center my-4'>
             { inEditingMode ?
                 <form onSubmit={handleOnSubmit}>
-                    <input type='text' value={titleName} onChange={handleTitleNameChange}/>
-                    <input type='text' value={description} onChange={handleDescriptionChange}/>
-                    <div>
-                        <input type='button'  value='Cancelar' onClick={handleCloseEditMode} />
-                        <input type="submit" value="Confirmar" />
+                    <div className='d-flex flex-column align-items-center'>
+                        <div className='new-card__title-input-container w-100 d-flex flex-column align-items-center mb-2'>
+                            <input 
+                                className='new-card__title-input d-flex mt-2 mb-2' 
+                                type="text" 
+                                placeholder="Adicione um título..." 
+                                value={titleName} 
+                                required
+                                onChange={handleTitleNameChange} />
+                        </div>
+                        <div className='d-flex mb-2 new-card__width-90'>
+                            <textarea 
+                                className='new-card__description-input'
+                                onChange={handleDescriptionChange}
+                                placeholder="Adicione uma descrição..."
+                                required
+                                value={description}
+                                ></textarea>
+                        </div>
                     </div>
-                </form>
+                    <div className='d-flex justify-content-end'>
+                        <input className='mb-2 mx-2 new-card__primary-button' type="submit" value="Confirmar" />
+                        <input className='mb-2 ms-2 me-3 new-card__primary-button' type="button" value="Cancelar" onClick={handleCloseEditMode} />
+                    </div>
+                </form> 
                 :
                 <>
-                    <div className='card__title-container d-flex flex-column mt-2 mb-2'>
-                        <span className='ms-2 card__title'>{props.title}</span>  
+                    <div className='card__title-container d-flex flex-column mt-1 pt-1 mb-2'>
+                        <span className='ms-2 card__title' title={props.title}>{props.title}</span>  
                     </div>
-                    <div className='d-flex new-card__width-90 ms-2'>
+                    <div className='d-flex new-card__width-90 ms-2 mb-2'>
                         <p className='card__description card__word-break overflow-auto'>{props.description}</p>
                     </div>
-                    <div className='d-flex justify-content-end mb-4'>
-                        <input type='button' className='mb-2 mx-2' value='Deletar' onClick={handleDelete} />
-                        <input  type='button' className='mb-2 ms-2 me-3' value='Editar' onClick={handleOpenEditMode} />
+                    <div className='d-flex justify-content-end mb-2'>
+                        <input type='button' className='mb-2 mx-2 new-card__primary-button' value='Editar' onClick={handleOpenEditMode} />
+                        <input  type='button' className='mb-2 ms-2 me-3 new-card__primary-button' value='Deletar' onClick={handleDelete} />
                     </div>
                 </>
             }

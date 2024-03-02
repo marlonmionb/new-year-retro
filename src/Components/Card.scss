@@ -13,6 +13,8 @@
     }
     &__title {
         font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
     } 
     &__description {
         width: 100%;
