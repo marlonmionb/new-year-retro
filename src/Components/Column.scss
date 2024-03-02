@@ -3,9 +3,23 @@
         width: 20%;
         height: 800px;
         background-color: rgb(201, 220, 237);
+        
         border:1px solid black;
     }
     &__new-card-container {
         width: 90%;
+    }
+    &__button-container {
+        width: 90%;
+        border: solid 1px rgb(201, 220, 237);;
+        border-radius: 5px;
+    }
+    &__button {
+        border: solid 1px rgb(201, 220, 237);;
+        border-radius: 5px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.05), 0 6px 20px 0 rgba(0,0,0,0.10);
+    }
+    &__button-shadow:hover {
+        box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 7px 25px 0 rgba(0,0,0,0.19);
     }
 }

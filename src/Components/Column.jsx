@@ -42,8 +42,8 @@ const Column = (props) => {
                 <p className='d-flex justify-content-center p-3'>{props.title}</p>
             </div>
             { props.isAddCardButtonVisible ? 
-            <div className='d-flex justify-content-center'>
-                <button onClick={toggleAddCardButton}>+</button> 
+            <div className='d-flex justify-content-center column__button-container'>
+                <button className='w-100 column__button' onClick={toggleAddCardButton}>+</button> 
             </div> :
             <div className='column__new-card-container'>
                 <NewCard 
@@ -53,6 +53,7 @@ const Column = (props) => {
                 />
             </div>
             }
+            <div className='column__new-card-container'>
             {
                 cards.map(card => {
                     return (
@@ -67,6 +68,7 @@ const Column = (props) => {
                     )
                 })
             }
+            </div>
         </div>
     )
 }

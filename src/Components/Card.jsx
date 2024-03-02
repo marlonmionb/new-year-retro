@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css'
+import './Card.scss'
 
 const Card = (props) => {
     const [inEditingMode, setEditingMode] = useState(false)
@@ -38,20 +39,28 @@ const Card = (props) => {
     }
     
     return (
-        <div className='button__primary'>
+        <div className='card__container d-flex flex-column justify-content-center my-4'>
             { inEditingMode ?
                 <form onSubmit={handleOnSubmit}>
                     <input type='text' value={titleName} onChange={handleTitleNameChange}/>
                     <input type='text' value={description} onChange={handleDescriptionChange}/>
-                    <button onClick={handleCloseEditMode}>Cancelar</button>
-                    <input type="submit" value="Confirmar" />
+                    <div>
+                        <input type='button'  value='Cancelar' onClick={handleCloseEditMode} />
+                        <input type="submit" value="Confirmar" />
+                    </div>
                 </form>
                 :
                 <>
-                    <h3>{props.title}</h3>
-                    <p>{props.description}</p>
-                    <button onClick={handleDelete}>Deletar</button>
-                    <button onClick={handleOpenEditMode}>Editar</button>
+                    <div className='card__title-container d-flex flex-column mt-2 mb-2'>
+                        <span className='ms-2 card__title'>{props.title}</span>  
+                    </div>
+                    <div className='d-flex new-card__width-90 ms-2'>
+                        <p className='card__description'>{props.description}</p>
+                    </div>
+                    <div className='d-flex justify-content-end mb-4'>
+                        <input type='button' className='mb-2 mx-2' value='Deletar' onClick={handleDelete} />
+                        <input  type='button' className='mb-2 ms-2 me-3' value='Editar' onClick={handleOpenEditMode} />
+                    </div>
                 </>
             }
         </div>
