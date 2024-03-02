@@ -55,7 +55,7 @@ const Card = (props) => {
                         <span className='ms-2 card__title'>{props.title}</span>  
                     </div>
                     <div className='d-flex new-card__width-90 ms-2'>
-                        <p className='card__description'>{props.description}</p>
+                        <p className='card__description card__word-break overflow-auto'>{props.description}</p>
                     </div>
                     <div className='d-flex justify-content-end mb-4'>
                         <input type='button' className='mb-2 mx-2' value='Deletar' onClick={handleDelete} />
