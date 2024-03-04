@@ -43,9 +43,11 @@ function App() {
   }
 
   return (
-    <div>
-    <h1 className="d-flex justify-content-center">New Year Retro</h1>
-      <div className="d-flex justify-content-center app__container">
+    <div className='d-flex flex-column align-items-center'>
+      <div className='my-4'>
+        <h1 className="d-flex justify-content-center">New Year Retro</h1>
+      </div>
+      <div className="d-flex justify-content-center align-items-center app__container">
         {columns.map(column => {
           return (
             <Column 

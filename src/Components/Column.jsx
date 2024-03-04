@@ -38,12 +38,12 @@ const Column = (props) => {
 
     return (
         <div className='column__container d-flex flex-column align-items-center'>
-            <div>
-                <p className='d-flex justify-content-center p-3'>{props.title}</p>
+            <div className='column__header-container mb-3'>
+                <p className='d-flex justify-content-start p-3 ms-2 column__header-text'>{props.title}</p>
             </div>
             { props.isAddCardButtonVisible ? 
             <div className='d-flex justify-content-center column__button-container'>
-                <button className='w-100 column__button' onClick={toggleAddCardButton}>+</button> 
+                <button className='w-100 column__button py-2' onClick={toggleAddCardButton}>+ Add card</button> 
             </div> :
             <div className='column__new-card-container'>
                 <NewCard 

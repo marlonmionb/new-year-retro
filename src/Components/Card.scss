@@ -2,17 +2,16 @@
     &__container {
         width: 100%;
         height: 170px;
-        background-color: rgb(162, 162, 212);
+        background-color: #deeee9;
         border-radius: 5px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.05), 0 6px 20px 0 rgba(0,0,0,0.10);
     }   
     &__title-container {
-        background-color: rgb(178, 178, 202);
-        border: solid 1px rgb(178, 178, 202);;
+        background-color: #d8e4e1;
+        border: solid 1px #d8e4e1;
         border-radius: 5px 5px 0 0;
     }
     &__title {
-        font-weight: bold;
         overflow: hidden;
         text-overflow: ellipsis;
     } 

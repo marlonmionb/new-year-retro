@@ -1,25 +1,29 @@
 .column {
     &__container {
-        width: 20%;
+        width: 100%;
         height: 800px;
-        background-color: rgb(201, 220, 237);
-        
-        border:1px solid black;
+        background-color: #eef2fa;
+        border-radius: 10px;
     }
     &__new-card-container {
         width: 90%;
     }
     &__button-container {
         width: 90%;
-        border: solid 1px rgb(201, 220, 237);;
         border-radius: 5px;
     }
     &__button {
-        border: solid 1px rgb(201, 220, 237);;
+        border: solid 1px rgb(211, 220, 228);
+        color: rgb(87, 107, 124);
         border-radius: 5px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.05), 0 6px 20px 0 rgba(0,0,0,0.10);
     }
     &__button-shadow:hover {
         box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24),0 7px 25px 0 rgba(0,0,0,0.19);
     }
+    &__header-text {
+        font-size: 18px;
+    }
+    &__header-container {
+        width: 100%;    }
 }
