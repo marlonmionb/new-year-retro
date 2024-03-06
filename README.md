@@ -1,8 +1,19 @@
-# React + Vite
+NEW YEAR RETRO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esta é uma aplicação para retrospectivas de sprint com a temática de ano novo. 
 
-Currently, two official plugins are available:
+Para executar esta aplicação localmente é necessário ter instalado em seu sistema operacional a versão mais recente do GIT e o NodeJS preferencialmente na versão 18.1.
+Tendo estas depedências instaladas você poderá executar o programa seguindo as seguintes etapas:
+1 - Abra o terminal e digite git clone https://github.com/marlonmionb/new-year-retro.git
+2 - execute: cd ./new-year-retro
+3 - execute o comando: npm install
+4 - em seguida execute o comando: npm run dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Desenvolvedores:
+Filipe Mateus Teixeira De Andrade
+Géssica Maximiano Costa
+Jonatan Paulo Nascimento Dorneles
+Lucas Felipe Santana Fé
+Marlon Mion Bohn
+Suellen Dantas de Oliveira
+
